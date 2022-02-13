@@ -1,0 +1,91 @@
+{
+  "projectType": "application",
+  "root": "apps/getbde",
+  "sourceRoot": "apps/getbde/src",
+  "prefix": "best-day-ever",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/getbde",
+        "index": "apps/getbde/src/index.html",
+        "main": "apps/getbde/src/main.ts",
+        "polyfills": "apps/getbde/src/polyfills.ts",
+        "tsConfig": "apps/getbde/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": ["apps/getbde/src/favicon.ico", "apps/getbde/src/assets"],
+        "styles": ["apps/getbde/src/styles.scss"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/getbde/src/environments/environment.ts",
+              "with": "apps/getbde/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "getbde:build:production"
+        },
+        "development": {
+          "browserTarget": "getbde:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "getbde:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/getbde/src/**/*.ts",
+          "apps/getbde/src/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/getbde"],
+      "options": {
+        "jestConfig": "apps/getbde/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

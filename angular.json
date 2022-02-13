@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "projects": {
+    "getbde": "apps/getbde",
+    "getbde-e2e": "apps/getbde-e2e"
+  }
+}
