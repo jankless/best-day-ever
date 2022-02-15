@@ -77,14 +77,6 @@
           "apps/getbde/src/**/*.html"
         ]
       }
-    },
-    "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/getbde"],
-      "options": {
-        "jestConfig": "apps/getbde/jest.config.js",
-        "passWithNoTests": true
-      }
     }
   },
   "tags": []

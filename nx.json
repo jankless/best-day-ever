@@ -1,7 +1,7 @@
 {
-  "npmScope": "best-day-ever",
+  "npmScope": "getbde",
   "affected": {
-    "defaultBase": "master"
+    "defaultBase": "main"
   },
   "cli": {
     "defaultCollection": "@nrwl/angular",
@@ -16,9 +16,10 @@
   },
   "tasksRunnerOptions": {
     "default": {
-      "runner": "@nrwl/workspace/tasks-runners/default",
+      "runner": "@nrwl/nx-cloud",
       "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
+        "cacheableOperations": ["build", "lint", "test", "e2e"],
+        "accessToken": "YjEwNTgzNmMtMjRlMC00OGRlLWE4OTEtZDRiYjhmYzgyYzBmfHJlYWQtd3JpdGU="
       }
     }
   },
@@ -34,12 +35,12 @@
     "@nrwl/angular:application": {
       "style": "scss",
       "linter": "eslint",
-      "unitTestRunner": "jest",
-      "e2eTestRunner": "cypress"
+      "unitTestRunner": "none",
+      "e2eTestRunner": "none"
     },
     "@nrwl/angular:library": {
       "linter": "eslint",
-      "unitTestRunner": "jest"
+      "unitTestRunner": "none"
     },
     "@nrwl/angular:component": {
       "style": "scss"
